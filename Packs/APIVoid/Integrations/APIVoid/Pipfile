@@ -15,7 +15,7 @@ freezegun = "*"
 flake8 = "*"
 
 [packages]
-certifi = "==2019.6.16"
+certifi = "==2023.7.22"
 chardet = "==3.0.4"
 dateparser = "==0.7.1"
 idna = "==2.8"
