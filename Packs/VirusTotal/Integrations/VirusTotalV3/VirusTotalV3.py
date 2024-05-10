@@ -851,17 +851,10 @@ class ScoreCalculator:
             item for item in preferred_vendor_scores.values() if item.get('category') == 'malicious'
         ]
         if len(malicious_trusted_vendors) >= self.trusted_vendors_threshold:
-            self.logs.append(
-                f'{len(malicious_trusted_vendors)} trusted vendors found the hash malicious. \n'
-                f'The trusted vendors threshold is {self.trusted_vendors_threshold}. \n'
-                f'Malicious check: {(len(malicious_trusted_vendors) >= self.trusted_vendors_threshold)=}. '
-            )
+
             return True
         else:
-            self.logs.append(
-                f'Those preferred vendors found the hash malicious: {malicious_trusted_vendors}. '
-                f'They do not pass the threshold {self.trusted_vendors_threshold}. '
-            )
+
             return False
 
     def is_malicious_by_threshold(self, analysis_stats: dict, threshold: int) -> bool:
